@@ -7,17 +7,30 @@
 
 import SwiftUI
 
+struct CustomText: View {
+    let text: String
+    var body: some View {
+        Text(text)
+            
+    }
+    init(text: String) {
+       print("custom text")
+        self.text = text
+        
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "phone.fill")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-                .font(.largeTitle)
-            Text("007")
-                .font(.title)
+        ScrollView(.horizontal){
+            LazyHStack (spacing:10) {
+                ForEach(0..<50) {
+                    CustomText(text: "Item \($0)")
+                        .font(.title)
+                }
+            }
+            .frame(maxWidth: .infinity)
         }
-        .padding()
     }
 }
 
