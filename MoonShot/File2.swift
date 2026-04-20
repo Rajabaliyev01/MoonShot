@@ -2,7 +2,7 @@
 //  File2.swift
 //  MoonShot
 //
-//  Created by YancharQuyon on 20/04/26.
+//  Created by Rajabaliyev01 on 20/04/26.
 //
 
 import SwiftUI
