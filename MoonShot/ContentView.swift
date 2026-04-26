@@ -15,12 +15,13 @@ struct ContentView: View {
         GridItem(.adaptive(minimum: 150))
     ]
     var body: some View {
+        
         NavigationStack {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(missions) { mission in
                         NavigationLink {
-                           MissionView(mission: mission, astronauts: astronauts)
+                            MissionView(mission: mission, astronauts: astronauts)
                         } label: {
                             VStack {
                                 Image(mission.image)
@@ -46,7 +47,7 @@ struct ContentView: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10)
                                     .stroke(.lightBackground)
-                                )
+                            )
                         }
                     }
                 }
@@ -54,8 +55,9 @@ struct ContentView: View {
             }
             .navigationTitle("MoonShot")
             .background(.darkBackground)
-//            .preferredColorScheme(.dark)
+                        .preferredColorScheme(.dark)
         }
+        
     }
 }
 
